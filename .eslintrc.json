@@ -10,6 +10,7 @@
     },
     "rules": {
         "linebreak-style": ["error", "windows"],
-        "new-cap": 0
+        "new-cap": 0,
+        "max-len": 0
     }
 }

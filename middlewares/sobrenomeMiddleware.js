@@ -1,14 +1,14 @@
 const validateFamilyName = (request, response, next) => {
-  const { body } = request;
+  const {body} = request;
   if (body.sobrenome == undefined) {
     return response.status(400)
-      .json({ message: 'O campo "sobrenome" é obrigatório' });
+        .json({message: 'O campo "sobrenome" é obrigatório'});
   }
   if (body.sobrenome === '') {
     return response.status(400)
-      .json({ message: 'O campo "sobrenome" não pode ser vazio' });
+        .json({message: 'O campo "sobrenome" não pode ser vazio'});
   }
   next();
 };
 
-module.exports = { validateFamilyName };
+module.exports = {validateFamilyName};
