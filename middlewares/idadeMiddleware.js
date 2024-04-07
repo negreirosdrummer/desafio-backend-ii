@@ -7,7 +7,7 @@ const validateAge = (request, response, next) => {
   if (isNaN(parseInt(body.idade)) || parseInt(body.idade) < 0 ||
   parseInt(body.idade) > 130) {
     return response.status(400)
-        .json({message: '"Idade" deve ser > 0 e valor possível'});
+        .json({message: '"Idade" deve ser maior que 0 e no máximo 130'});
   }
   next();
 };

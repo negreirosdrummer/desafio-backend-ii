@@ -6,17 +6,21 @@ const validateDataAtualizado = (request, response, next) => {
         .json({message: 'O campo "data_atualizado" é obrigatório'});
   }
 
-  // Verifica se o valor é uma string
+  if (body.data_atualizado === '') {
+    return response.status(400)
+        .json({message: 'O campo "data_atualizado" não pode ser vazio'});
+  }
+
   if (typeof body.data_atualizado !== 'string') {
     return response.status(400)
         .json({message: 'O campo "data_atualizado" deve ser uma string'});
   }
 
-  // Verifica se o valor pode ser convertido para uma data válida
-  const dataAtualizado = new Date(body.data_atualizado);
-  if (isNaN(dataAtualizado.getTime())) {
+  // Expressão regular para verificar o padrão YYYY-MM-DD HH:MM:SS
+  const dateTimeRegex = /^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/;
+  if (!dateTimeRegex.test(body.data_atualizado)) {
     return response.status(400)
-        .json({message: 'O campo "data_atualizado" deve ser uma data válida.'});
+        .json({message: 'O campo "data_atualizado" deve estar no formato YYYY-MM-DD HH:MM:SS'});
   }
 
   next();

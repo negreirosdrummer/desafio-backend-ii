@@ -7,10 +7,7 @@ router.get('/', function(req, res, next) {
     host: 'localhost', user: 'rafa', password: 'senha',
     database: 'desafio-backend-ii', port: 3306,
   }).then((connection) => {
-    connection.query('SELECT * FROM clientes;')
-        .then((result) => {
-          res.send(result[0]);
-        });
+    res.send('Obteve uma requisição GET em /');
   });
 });
 module.exports = router;

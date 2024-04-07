@@ -6,7 +6,6 @@ const validatePreco = (request, response, next) => {
         .json({message: 'O campo "preço" é obrigatório'});
   }
 
-  // Verifica se o valor é um número
   if (typeof body.preco !== 'number') {
     return response.status(400)
         .json({message: 'O campo "preço" deve ser um número'});
