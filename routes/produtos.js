@@ -19,7 +19,8 @@ router.put('/', nomeMiddleware.validateName,
     descricaoMiddleware.validateDescricao,
     precoMiddleware.validatePreco,
     dataMiddleware.validateDataAtualizado,
-    produtoController.update);
+    produtoController.update
+);
 /* DELETE produtos*/
 router.delete('/:id', produtoController.remove);
 

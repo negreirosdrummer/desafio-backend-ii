@@ -22,7 +22,7 @@ const update = async (request, response) => {
 };
 
 const remove = async (request, response) => {
-  const { id } = request.params;
+  const {id} = request.params;
   const result = await clienteService.remove(id);
   return result ?
     response.status(200).json() : response.status(400).json({

@@ -17,7 +17,7 @@ const findAll = async () => {
 const update = async (cliente) => {
   const query = 'UPDATE clientes SET nome = ?, sobrenome = ?, email = ?, idade = ? WHERE id = ? ';
   const isOk = await (await connection).execute(query,
-      [cliente.nome, cliente.sobrenome, cliente.email, cliente.idade, cliente.id]);
+    [cliente.nome, cliente.sobrenome, cliente.email, cliente.idade, cliente.id]);
   if (isOk[0].affectedRows === 1) {
     cache.flushAll();
   }
@@ -27,7 +27,7 @@ const update = async (cliente) => {
 const save = async (cliente) => {
   const query = 'INSERT INTO clientes(nome, sobrenome, email, idade) VALUES (?, ?, ?, ?)';
   const isOk = await (await connection).execute(query,
-      [cliente.nome, cliente.sobrenome, cliente.email, cliente.idade]);
+    [cliente.nome, cliente.sobrenome, cliente.email, cliente.idade]);
   if (isOk[0].affectedRows === 1) {
     cache.flushAll();
   }
