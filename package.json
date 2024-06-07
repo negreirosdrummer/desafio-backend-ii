@@ -5,20 +5,20 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "debug": "SET DEBUG=desafio-backend-ii* & npm start",
+    "debug": "SET DEBUG=desafio-complexo-backend-ii* & npm start",
     "lint": "eslint **/*.js --ignore-pattern node_modules/",
     "nodemon": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negreirosdrummer/desafio-backend-ii.git"
+    "url": "git+https://github.com/negreirosdrummer/desafio-complexo-backend-ii.git"
   },
   "author": "Rafael Fernandes Negreiros, Raphael Soares Sales, Deyvid Antônio Eugênio, Antônio Victor Carvalho",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/negreirosdrummer/desafio-backend-ii/issues"
+    "url": "https://github.com/negreirosdrummer/desafio-complexo-backend-ii.git/issues"
   },
-  "homepage": "https://github.com/negreirosdrummer/desafio-backend-ii#readme",
+  "homepage": "https://github.com/negreirosdrummer/desafio-complexo-backend-ii.git#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
